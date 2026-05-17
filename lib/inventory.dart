@@ -14,6 +14,7 @@ class _inventoryState extends State<inventory> {
   final TextEditingController productpriceController = TextEditingController();
   final TextEditingController productAmmountController =
       TextEditingController();
+  final TextEditingController SearchProductController = TextEditingController();
 
   final List<Map<String, dynamic>> productList = [];
 
@@ -34,13 +35,13 @@ class _inventoryState extends State<inventory> {
       if (productPrice <= 1000) {
         discount = "0%";
       } else if (productPrice <= 2000) {
-        discount = "5";
+        discount = "5%";
       } else if (productPrice <= 3000) {
-        discount = "10";
+        discount = "10%";
       } else if (productPrice <= 5000) {
-        discount = "15";
+        discount = "15%";
       } else {
-        discount = "20";
+        discount = "20%";
       }
       switch (discount) {
         case "0%":
@@ -51,15 +52,15 @@ class _inventoryState extends State<inventory> {
           disMessage = 'Small Discount';
           break;
 
-        case "10":
+        case "10%":
           disMessage = 'Good Offer';
           break;
 
-        case "15":
+        case "15%":
           disMessage = 'Have a good day';
           break;
 
-        case "20":
+        case "20%":
           disMessage = 'Best Deal';
           break;
 
@@ -105,6 +106,34 @@ class _inventoryState extends State<inventory> {
     });
   }
 
+  void sortProductsName() {
+    setState(() {
+      productList.sort(
+        (a, b) =>
+            a['productName'].toString().compareTo(b['productName'].toString()),
+      );
+    });
+  }
+
+  void sortProductPrice() {
+    setState(() {
+      productList.sort(
+        (a, b) => a['productPrice'].toString().compareTo(
+          b['productPrice'].toString(),
+        ),
+      );
+    });
+  }
+
+
+    List<Map<String, dynamic>> get searchProducts {
+    final String query = SearchProductController.text.trim().toLowerCase();
+
+    return productList.where((product) {
+      return product['productName'].toString().toLowerCase().contains(query);
+    }).toList();
+  }
+
   @override
   void dispose() {
     productAmmountController.dispose();
@@ -116,112 +145,173 @@ class _inventoryState extends State<inventory> {
 
   @override
   Widget build(BuildContext context) {
+    final List<Map<String, dynamic>> productList = searchProducts;
     return Scaffold(
       appBar: AppBar(
         title: Text("Inventory"),
         backgroundColor: Colors.transparent,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(18.0),
-        child: Column(
-          children: [
-            TextField(
-              controller: productUrlController,
-              decoration: InputDecoration(
-                labelText: "Product URL",
-                border: OutlineInputBorder(),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(18.0),
+          child: Column(
+            children: [
+              TextField(
+                controller: productUrlController,
+                decoration: InputDecoration(
+                  labelText: "Product URL",
+                  border: OutlineInputBorder(),
+                ),
               ),
-            ),
 
-            SizedBox(height: 20),
+              SizedBox(height: 20),
 
-            TextField(
-              controller: productNameController,
-              decoration: InputDecoration(
-                labelText: "Product Name",
-                border: OutlineInputBorder(),
+              TextField(
+                controller: productNameController,
+                decoration: InputDecoration(
+                  labelText: "Product Name",
+                  border: OutlineInputBorder(),
+                ),
               ),
-            ),
 
-            SizedBox(height: 20),
+              SizedBox(height: 20),
 
-            Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    controller: productpriceController,
-                    decoration: InputDecoration(
-                      labelText: "Product Prize",
-                      border: OutlineInputBorder(),
-                    ),
-                  ),
-                ),
-                SizedBox(width: 20),
-                Expanded(
-                  child: TextField(
-                    controller: productAmmountController,
-                    decoration: InputDecoration(
-                      labelText: "Product Ammount",
-                      border: OutlineInputBorder(),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-
-            SizedBox(height: 20),
-
-            Row(
-              children: [
-                Expanded(
-                  child: ElevatedButton(
-                    onPressed: addProduct,
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: Text(
-                        "Add Product",
-                        style: TextStyle(fontSize: 16, color: Colors.black),
+              Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      controller: productpriceController,
+                      decoration: InputDecoration(
+                        labelText: "Product Prize",
+                        border: OutlineInputBorder(),
                       ),
                     ),
                   ),
-                ),
-
-                SizedBox(width: 20),
-
-                Expanded(
-                  child: ElevatedButton(
-                    onPressed: clearData,
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-
-                    child: Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: Text(
-                        "Clear All",
-                        style: TextStyle(color: Colors.black, fontSize: 16),
+                  SizedBox(width: 20),
+                  Expanded(
+                    child: TextField(
+                      controller: productAmmountController,
+                      decoration: InputDecoration(
+                        labelText: "Product Ammount",
+                        border: OutlineInputBorder(),
                       ),
                     ),
                   ),
+                ],
+              ),
+
+              SizedBox(height: 20),
+
+              Row(
+                children: [
+                  Expanded(
+                    child: ElevatedButton(
+                      onPressed: addProduct,
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Text(
+                          "Add Product",
+                          style: TextStyle(fontSize: 16, color: Colors.black),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  SizedBox(width: 20),
+
+                  Expanded(
+                    child: ElevatedButton(
+                      onPressed: clearData,
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Text(
+                          "Clear All",
+                          style: TextStyle(color: Colors.black, fontSize: 16),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+
+              SizedBox(height: 20),
+              TextField(
+                controller: SearchProductController,
+                onChanged: (_){
+                  setState(() {
+                    
+                  });
+                },
+                decoration: InputDecoration(
+                  labelText: 'Search Product',
+                  border: OutlineInputBorder()
                 ),
-              ],
-            ),
+              ),
 
-            SizedBox(height: 20),
-            Text("Total PRoducts: ${productList.length}"),
+              SizedBox(height: 20),
+              Text("Total PRoducts: ${productList.length}"),
 
-            SizedBox(height: 20),
+              SizedBox(height: 20),
 
-            Expanded(
-              child: ListView.builder(
+              Row(
+                children: [
+                  Expanded(
+                    child: ElevatedButton(
+                      onPressed: sortProductsName,
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Text(
+                          "Sort Name",
+                          style: TextStyle(fontSize: 16, color: Colors.black),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  SizedBox(width: 20),
+
+                  Expanded(
+                    child: ElevatedButton(
+                      onPressed: sortProductPrice,
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Text(
+                          "Sort Price",
+                          style: TextStyle(color: Colors.black, fontSize: 16),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+
+              SizedBox(height: 20),
+
+              ListView.builder(
                 shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
 
                 itemCount: productList.length,
 
@@ -245,7 +335,17 @@ class _inventoryState extends State<inventory> {
                           width: 100,
                           height: 100,
                           fit: BoxFit.cover,
+                          errorBuilder: (context, error, stackTrace) {
+                            return Container(
+                              width: 100,
+                              height: 100,
+                              color: const Color.fromARGB(101, 241, 241, 241),
+                              child: Text("No Image"),
+                            );
+                          },
                         ),
+
+                        SizedBox(width: 15),
 
                         SizedBox(width: 15),
 
@@ -273,17 +373,18 @@ class _inventoryState extends State<inventory> {
                           ),
                         ),
                         IconButton(
-
-                          onPressed: ()=> removeProduct(viewproduct['productName'].toString()),
-                          icon: Icon(Icons.delete,color: Colors.red,),
+                          onPressed: () => removeProduct(
+                            viewproduct['productName'].toString(),
+                          ),
+                          icon: Icon(Icons.delete, color: Colors.red),
                         ),
                       ],
                     ),
                   );
                 },
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
