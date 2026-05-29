@@ -12,7 +12,7 @@ A modern, beautifully designed social media profile interface built with Flutter
 
 | Profile Header | Profile Card |
 |----------------|--------------|
-| ![Screenshot 1](assets/s1.png) | ![Screenshot 2](assets\s2.png) |
+| ![Screenshot 1](assets/s1.png) | ![Screenshot 2](assets/s2.png) |
 
 | Gallery Section | Posts Feed |
 |----------------|-------------|
