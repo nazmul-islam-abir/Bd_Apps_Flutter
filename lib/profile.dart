@@ -322,77 +322,107 @@ class profile extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
                 color: const Color.fromARGB(255, 24, 24, 24),
               ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    decoration: BoxDecoration(shape: BoxShape.circle),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          height: 30,
-                          width: 30,
-                          child: ClipRRect(
-                            borderRadius: BorderRadiusGeometry.circular(100),
-                            child: Image.asset(
-                              '454714502_1605822709983642_3052178341574807126_n.jpg',
-                              fit: BoxFit.cover,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 18, right: 18),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(shape: BoxShape.circle),
+                      child: Stack(
+                        clipBehavior: Clip.none,
+                        children: [
+                          Container(
+                            height: 30,
+                            width: 30,
+                            decoration: BoxDecoration(
+                              border: Border.all(width: 2, color: Colors.white),
+                              shape: BoxShape.circle,
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadiusGeometry.circular(100),
+                              child: Image.asset(
+                                '454714502_1605822709983642_3052178341574807126_n.jpg',
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
-                        ),
-                        Container(
-                          height: 30,
-                          width: 30,
-                          child: ClipRRect(
-                            borderRadius: BorderRadiusGeometry.circular(100),
-                            child: Image.asset(
-                              '480738932_1739633569935888_4729460214236419955_n.jpg',
-                              fit: BoxFit.cover,
+                          Positioned(
+                            left: 15,
+                            child: Container(
+                              height: 30,
+                              width: 30,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  width: 2,
+                                  color: Colors.white,
+                                ),
+                                shape: BoxShape.circle,
+                              ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadiusGeometry.circular(
+                                  100,
+                                ),
+                                child: Image.asset(
+                                  '480738932_1739633569935888_4729460214236419955_n.jpg',
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
                             ),
                           ),
-                        ),
-                        Container(
-                          height: 30,
-                          width: 30,
-                          child: ClipRRect(
-                            borderRadius: BorderRadiusGeometry.circular(100),
-                            child: Image.asset(
-                              '483555508_1756483494917562_3101317641058297300_n.jpg',
-                              fit: BoxFit.cover,
+
+                          Positioned(
+                            left: 30,
+                            child: Container(
+                              height: 30,
+                              width: 30,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  width: 2,
+                                  color: Colors.white,
+                                ),
+                                color: const Color.fromARGB(255, 24, 24, 24),
+                                shape: BoxShape.circle,
+                              ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadiusGeometry.circular(
+                                  100,
+                                ),
+                                child: Icon(Icons.add, color: Colors.white),
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 5),
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "150k",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
+                    SizedBox(height: 5),
+                    Container(
+                      child: Row(
+                        children: [
+                          Text(
+                            "150k",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        SizedBox(width: 5),
-                        Text(
-                          "Followers",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
+                          SizedBox(width: 5),
+                          Text(
+                            "Followers",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
@@ -405,77 +435,107 @@ class profile extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
                 color: const Color.fromARGB(255, 24, 24, 24),
               ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    decoration: BoxDecoration(shape: BoxShape.circle),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          height: 30,
-                          width: 30,
-                          child: ClipRRect(
-                            borderRadius: BorderRadiusGeometry.circular(100),
-                            child: Image.asset(
-                              'FB_IMG_1774940215681.jpg.',
-                              fit: BoxFit.cover,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 18, right: 18),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(shape: BoxShape.circle),
+                      child: Stack(
+                        clipBehavior: Clip.none,
+                        children: [
+                          Container(
+                            height: 30,
+                            width: 30,
+                            decoration: BoxDecoration(
+                              border: Border.all(width: 2, color: Colors.white),
+                              shape: BoxShape.circle,
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadiusGeometry.circular(100),
+                              child: Image.asset(
+                                'FB_IMG_1774940215681.jpg.',
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
-                        ),
-                        Container(
-                          height: 30,
-                          width: 30,
-                          child: ClipRRect(
-                            borderRadius: BorderRadiusGeometry.circular(100),
-                            child: Image.asset(
-                              '654299492_2064424464123462_1105435852741189062_n.jpg',
-                              fit: BoxFit.cover,
+                          Positioned(
+                            left: 15,
+                            child: Container(
+                              height: 30,
+                              width: 30,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  width: 2,
+                                  color: Colors.white,
+                                ),
+                                shape: BoxShape.circle,
+                              ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadiusGeometry.circular(
+                                  100,
+                                ),
+                                child: Image.asset(
+                                  '654299492_2064424464123462_1105435852741189062_n.jpg',
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
                             ),
                           ),
-                        ),
-                        Container(
-                          height: 30,
-                          width: 30,
-                          child: ClipRRect(
-                            borderRadius: BorderRadiusGeometry.circular(100),
-                            child: Image.asset(
-                              '628225991_2024501181449124_6444500452461940511_n.jpg',
-                              fit: BoxFit.cover,
+
+                          Positioned(
+                            left: 30,
+                            child: Container(
+                              height: 30,
+                              width: 30,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  width: 2,
+                                  color: Colors.white,
+                                ),
+                                color: const Color.fromARGB(255, 24, 24, 24),
+                                shape: BoxShape.circle,
+                              ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadiusGeometry.circular(
+                                  100,
+                                ),
+                                child: Icon(Icons.add, color: Colors.white),
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 5),
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "100k",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
+                    SizedBox(height: 5),
+                    Container(
+                      child: Row(
+                        children: [
+                          Text(
+                            "100k",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        SizedBox(width: 5),
-                        Text(
-                          "Following",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
+                          SizedBox(width: 5),
+                          Text(
+                            "Following",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
