@@ -1,73 +1,81 @@
-# Social Media Profile UI - Flutter Application
+# Social Media Profile UI
 
-A modern, beautifully designed social media profile interface built with Flutter. This UI component showcases a complete social media profile layout with profile cards, follower statistics, image galleries, and interactive posts.
+A clean Flutter social profile screen built for a mobile app interface. The design includes a large profile hero, follower statistics, editable profile actions, story-style highlights, a gallery preview, and a scrollable post feed.
 
-![Flutter Version](https://img.shields.io/badge/Flutter-3.0+-blue.svg)
-![Dart Version](https://img.shields.io/badge/Dart-3.0+-blue.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
+![Flutter](https://img.shields.io/badge/Flutter-3.0+-02569B?style=for-the-badge&logo=flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-3.0+-0175C2?style=for-the-badge&logo=dart&logoColor=white)
+![Platform](https://img.shields.io/badge/Platform-Android%20%7C%20iOS%20%7C%20Web-111827?style=for-the-badge)
 
-## 📱 Screenshots
+## Preview
 
-*You can add your screenshots here. Place them in the `assets/screenshots/` folder and update the paths below:*
+<table>
+  <tr>
+    <td width="50%">
+      <h3>Profile Hero</h3>
+      <img src="assets/s1.png" alt="Profile hero screen" width="100%">
+      <p>The opening profile card presents the user name, handle, short bio, menu action, and follow button over a full image background.</p>
+    </td>
+    <td width="50%">
+      <h3>Stats and Highlights</h3>
+      <img src="assets/s2.png" alt="Stats and highlights screen" width="100%">
+      <p>Follower and following cards are paired with edit actions and circular highlight items for quick profile navigation.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <h3>Gallery Grid</h3>
+      <img src="assets/s3.png" alt="Gallery grid screen" width="100%">
+      <p>The media section shows profile content in a compact gallery layout with counters for posts, photos, videos, and saved items.</p>
+    </td>
+    <td width="50%">
+      <h3>Post Feed</h3>
+      <img src="assets/s4.png" alt="Post feed screen" width="100%">
+      <p>The post feed includes dated image posts, gradient text overlays, like and comment actions, a comment field, and a share option.</p>
+    </td>
+  </tr>
+</table>
 
-| Profile Header | Profile Card |
-|----------------|--------------|
-| ![Screenshot 1](assets/s1.png) | ![Screenshot 2](assets/s2.png) |
+## Features
 
-| Gallery Section | Posts Feed |
-|----------------|-------------|
-| ![Screenshot 3](assets/s3.png) | ![Screenshot 4](assets/s4.png) |
+- Full-screen social profile layout
+- Image-based profile header with dark gradient overlay
+- Follow button, menu button, and profile edit actions
+- Follower and following stat cards with stacked avatars
+- Horizontal highlight section with add-highlight control
+- Gallery grid with visual content counters
+- Scrollable image post feed with likes, comments, and sharing UI
 
-## ✨ Features
+## Project Structure
 
-### 📸 Profile Section
-- **Hero Profile Card** with gradient overlay and cover image
-- User information display (name, username, bio)
-- Follow button with interactive UI
-- Menu button for additional options
+```text
+lib/
+  main.dart       App entry point
+  profile.dart    Social media profile screen
+  sp.dart         Extra onboarding/splash UI experiment
 
-### 👥 Social Statistics
-- Followers count display with avatar previews
-- Following count with avatar previews
-- Dark-themed stat cards for better visibility
+assets/
+  s1.png          Profile hero screenshot
+  s2.png          Stats and highlights screenshot
+  s3.png          Gallery screenshot
+  s4.png          Post feed screenshot
+```
 
-### 🎯 Highlights Area
-- Horizontal scrollable highlights section
-- "Add Highlight" option with icon
-- Circular highlight images with border styling
-- Label support for each highlight
+## Getting Started
 
-### 🖼️ Gallery Grid
-- 3x3 grid layout for media content
-- Statistics counters for:
-  - Posts (grid icon)
-  - Photos (camera icon)
-  - Videos (video icon)
-  - Saved content (save icon)
-- Masonry-style image grid layout
-- Rounded corner image containers
+Make sure Flutter is installed, then run:
 
-### 📝 Posts Feed
-- Multiple post cards with:
-  - Timestamp display (auto-updating)
-  - Cover images with gradient overlays
-  - Post captions
-  - Like and comment counters
-  - Interactive buttons (like, comment, share)
-- Comment input section with user avatar
-- Smooth scrolling experience
+```bash
+flutter pub get
+flutter run
+```
 
-## 🚀 Getting Started
+## Built With
 
-### Prerequisites
+- Flutter
+- Dart
+- Material Design widgets
+- Local image assets
 
-- [Flutter SDK](https://flutter.dev/docs/get-started/install) (3.0 or higher)
-- [Dart SDK](https://dart.dev/get-dart) (3.0 or higher)
-- Android Studio / VS Code with Flutter extensions
+## Notes
 
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/social-media-profile-ui.git
-   cd social-media-profile-ui
+This project is designed as a UI practice app for building a modern social media profile experience in Flutter.
