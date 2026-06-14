@@ -1,4 +1,6 @@
-import 'package:bd_apps_course/inventory.dart';
+import 'package:bd_apps_course/profile.dart';
+import 'package:bd_apps_course/sp.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Inventory System",
-      home: inventory(),
+      home: profile(),
     );
   }
 }
